@@ -4,19 +4,29 @@
     url("../fonts/joystix\ monospace.ttf") format("truetype");
 }
 
-body {
-  background-color: black;
-  color: white;
+@import "header.css";
+@import "board.css";
+@import "popup.css";
+
+* {
   margin: 0;
   padding: 0;
-  font-family: "Joystix", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
   line-height: 1.5;
+  background-color: black;
+  font-family: "Joystix", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+main {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
 }

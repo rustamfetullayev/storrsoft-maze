@@ -8,18 +8,10 @@ export const App = React.memo(() => {
   }, []);
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        position: "relative",
-        padding: "16px",
-      }}
-    >
+    <main>
       <Header />
       <Board />
       <Popup />
-    </div>
+    </main>
   );
 });

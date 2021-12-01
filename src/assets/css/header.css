@@ -1,0 +1,13 @@
+header div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+header div span {
+  color: yellow;
+  margin-left: 40px;
+}
+
+header div span:not(:last-child) {
+  margin-right: 40px;
+}

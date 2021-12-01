@@ -2,6 +2,7 @@
   "compilerOptions": {
     "paths": {
       "@hooks": ["./src/hooks"],
+      "@assets": ["./src/assets"],
       "@config": ["./src/config"],
       "@layouts": ["./src/layouts"],
       "@library": ["./src/library"],

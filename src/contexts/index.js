@@ -85,6 +85,7 @@ const reducer = (state, action) => {
 
 export const GameProvider = React.memo(({ children }) => {
   const [state, dispatch] = React.useReducer(reducer, INITIAL_STATE);
+
   const [playLevelMusic, { stop: stopLevelMusic }] = useSound(
     "../assets/audio/maze.mp3",
     {
@@ -153,12 +154,7 @@ export const GameProvider = React.memo(({ children }) => {
   }, [state, stopLevelMusic]);
 
   return (
-    <GameContext.Provider
-      value={{
-        ...state,
-        isPlaying,
-      }}
-    >
+    <GameContext.Provider value={{ ...state, isPlaying }}>
       {children}
     </GameContext.Provider>
   );

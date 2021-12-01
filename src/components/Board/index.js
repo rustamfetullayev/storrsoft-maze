@@ -6,12 +6,13 @@ import { useDimensions } from "@hooks";
 import { Drawer } from "@library";
 
 export const Board = React.memo(() => {
-  const { maze, currentCell, start, goal } = React.useContext(GameContext);
-  const [showGoal, setShowGoal] = React.useState(true);
-  const containerRef = React.useRef(null);
   const canvasRef = React.useRef(null);
-  const { width, height } = useDimensions();
+  const containerRef = React.useRef(null);
+  const [showGoal, setShowGoal] = React.useState(true);
   const [shouldDraw, setShouldDraw] = React.useState(false);
+  const { maze, currentCell, start, goal } = React.useContext(GameContext);
+
+  const { width, height } = useDimensions();
   const [logo] = useImage("../../assets/images/logo.svg");
 
   useInterval(() => {
@@ -48,24 +49,8 @@ export const Board = React.memo(() => {
   }, [shouldDraw, maze, logo, currentCell, start, goal, showGoal]);
 
   return (
-    <div
-      ref={containerRef}
-      style={{
-        flex: 1,
-        height: "100%",
-        position: "relative",
-      }}
-    >
-      <canvas
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-        }}
-        ref={canvasRef}
-      />
+    <div ref={containerRef} className="board">
+      <canvas ref={canvasRef} />
     </div>
   );
 });
